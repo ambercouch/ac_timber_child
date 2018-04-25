@@ -1,0 +1,34 @@
+<div class="hero" >
+  <div class="hero__container">
+
+    <div class="hero__background">
+      <img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="hero__background-img">
+    </div>
+
+
+    <div class="hero__body">
+
+      {% if bannerLogo.url != '' %}
+      <div class="hero__logo">
+          <img class="hero__logo-img" src=" {{  bannerLogo.url  }}" alt="{{ bannerLogo.alt }}">
+      </div>
+      {% endif %}
+
+      {% if  bannerContent != '' %}
+      <div class="hero__content">
+        {{  bannerContent  }}
+      </div>
+      {% endif %}
+
+      {% if not hideBannerMenu %}
+      <div class="hero__call-to-action">
+        <ul class="hero__menu">
+          {% for item in menuHero.get_items %}
+          <li class="hero__menu__item {{item.classes | join(' ')}}"><a class="hero__link " href="{{item.get_link}}" >{{item.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
