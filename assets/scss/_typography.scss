@@ -1,0 +1,16 @@
+/*
+ *
+ */
+html{
+  font-family: $act-font-family-sans;
+}
+
+@include headings(1,6){
+  font-family: $act-font-family-headings;
+  margin-top: 0;
+}
+
+p{
+  margin-top: 0;
+}
+

@@ -1,0 +1,18 @@
+.accessibility,
+.visuallyhidden{
+  @include accessible-hidden;
+}
+
+.is-hidden{
+  display: none !important;
+}
+
+.has-title-hidden{
+
+}
+.aligncenter{
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

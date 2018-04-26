@@ -1,0 +1,64 @@
+/*
+BEM BLOCK .c-masthead
+ */
+.c-masthead{
+  border-bottom:none;
+  width: 100%;
+  @extend .o-wrapper;
+  padding: $act-unit;
+  padding-bottom: $act-unit;
+  padding-top: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &:after{
+    width: 100%;
+  }
+}
+
+/*
+BEM BLOCK MODIFIERS .c-masthead--
+ */
+[class*="c-masthead--"]{
+  @extend .c-masthead;
+}
+
+.c-masthead--{
+  &front-page{
+    background: transparent;
+    position: absolute;
+    z-index: 9999;
+  }
+}
+
+/*
+BEM ELEMENTS .c-masthead__
+ */
+.c-masthead__{
+  &navigation{
+    @extend %off-page--curtain;
+  }
+&masthead-before-widgets{
+  @include breakout-band($bgc : $brand-col-2);
+  text-align: right;
+  margin-bottom:$act-unit-s;
+  background: $brand-col-2;
+  color: white;
+  padding: $act-unit-t !important;
+  @include act-font-size($milli-size, 1);
+
+  @include mq($from : tablet){
+
+    width: 100%;
+
+  }
+  @include mq($from : desktop){
+
+  }
+}
+  &branding{
+    background: transparent;
+    margin-bottom: 0;
+  }
+}
