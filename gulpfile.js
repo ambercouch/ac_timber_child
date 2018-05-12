@@ -1,4 +1,4 @@
-var siteLocalUrl = 'acwordpress.nlc';
+var siteLocalUrl = 'ambercouch.local';
 var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
