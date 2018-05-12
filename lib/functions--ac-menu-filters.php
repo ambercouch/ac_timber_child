@@ -6,7 +6,8 @@
  * Time: 16:11
  */
 
-add_filter('wp_nav_menu_objects', 'act_menu_filters', 10, 2);
+//Removed because it conflicts with the parent theme
+//add_filter('wp_nav_menu_objects', 'act_menu_filters', 10, 2);
 
 function act_menu_filters($sorted_menu_objects, $args) {
 
