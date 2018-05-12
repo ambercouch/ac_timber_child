@@ -1,4 +1,4 @@
-var siteLocalUrl = 'nowasteliving.local';
+var siteLocalUrl = 'acwordpress.nlc';
 var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
@@ -90,14 +90,21 @@ gulp.task('scripts', function (cb) {
 gulp.task('sass', function (cb) {
 
     var sassStream,
-        cssStream;
+        cssStream,
+        mergeStream;
+
 
     sassStream =  gulp.src('assets/scss/main.scss')
+        .pipe(concat('a.css'))
         .pipe(sass().on('error', sass.logError))
+
 
     cssStream = gulp.src(cssNpmScripts)
 
-    return merge(sassStream, cssStream)
+    mergeStream = merge(sassStream, cssStream);
+
+    //TODO : merge the streams in order so the WP style header is at the top
+    return mergeStream
         .pipe(concat('style.css'))
         .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(gulp.dest(''))

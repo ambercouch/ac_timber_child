@@ -13,7 +13,7 @@ ACTIMBER = {
             //add js class
             jQuery('body').addClass('js');
 
-            $("[data-fitvid]").fitVids();
+            //jQuery("[data-fitvid]").fitvids();
 
             
             /**
@@ -101,4 +101,4 @@ UTIL = {
         UTIL.exec(template, handle);
     }
 };
-jQuery(window).load(UTIL.init);
+jQuery(window).load(UTIL.init());
