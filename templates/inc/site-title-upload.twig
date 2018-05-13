@@ -2,7 +2,7 @@
 {%  set logoHeight = fn('get_field','logo_height','options')   %}
 {% if logoWidth != ''  or logoHeight != ''%}
   <style>
-    .c-site-title--upload{
+    .c-site-title__logo--upload{
     {% if logoWidth != '' %}
       width: {{ logoWidth }}px !important;
       height: auto !important;
@@ -13,16 +13,21 @@
     }
   </style>
 {% endif %}
-{% if fn('is_front_page') %}
-  <h1 class="c-site-title--upload c-site-title--front-page" >
-    <a class="site-title__link" href="{{ site.url }} " rel="home">
-      <img class="c-site-title__img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
-    </a>
-  </h1>
-{% else %}
-  <span class="c-site-title--upload c-site-title--page">
-    <a class="sc-ite-title__link" href="{{ site.url }} " rel="home">
-       <img class="c-site-title__img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
-    </a>
-  </span>
-{% endif %}
+<div class="c-site-title">
+  {% if fn('is_front_page') %}
+
+    <h1 class="c-site-title__logo--upload c-site-title--front-page" >
+      <a class="c-site-title__link" href="{{ site.url }} " rel="home">
+        <img class="c-site-title__img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
+      </a>
+    </h1>
+    <span class="c-site-title__description">{{ site.description }}</span>
+  {% else %}
+    <span class="c-site-title__logo--upload c-site-title--page">
+      <a class="c-site-title__link" href="{{ site.url }} " rel="home">
+         <img class="c-site-title__img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
+      </a>
+    </span>
+    <span class="c-site-title__description">{{ site.description }}</span>
+  {% endif %}
+</div>

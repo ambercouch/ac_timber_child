@@ -78,6 +78,9 @@ class StarterSite extends TimberSite {
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
 
+        $context['additionalPageScripts'] = get_field('additional_page_scripts', $post_id);
+
+
         //ACF options
         //Remove the auto p from afc
         remove_filter ('acf_the_content', 'wpautop');
