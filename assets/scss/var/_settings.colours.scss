@@ -14,7 +14,50 @@ $act-grey : #ccc;
 $act-grey-light : #eee;
 $act-grey-dark : #666;
 
-$brand-col-1 : $act-grey;
+$white:             #FFFFFF;
+$grey:              #282222;
+$brown:             #4D4D4D;
+$brown--tint:       tint($brown, 20%);
+$brown--shade:      shade($brown, 20%);
+
+$cream:             #FBF9E2;
+$cream--tint:       tint($cream, 20%);
+$cream--shade:      shade($cream, 20%);
+
+$aqua:              #C0DAD1;
+$aqua--tint:        tint($aqua, 20%);
+$aqua--shade:       shade($aqua, 20%);
+
+$amber:             #FBB317;
+$amber--tint:        tint($amber, 20%);
+$amber--shade:       shade($amber, 20%);
+
+$yellow:            #FCFB57;
+$green:             #8DAE2E;
+$red:               #F93F1D;
+
+$slate-grey :       #4a383c;
+$dark-red :         #68081b;
+$burn-orange:       #c65c16;
+$pale-teal:         #bdd0c7;
+$pale-yellow:       #faf6da;
+
+//$brand-col-1:       $slate-gray;
+//$brand-col-2:       $pale-teal;
+//$brand-col-2--shade:      darken($brand-col-2,20%);
+//$brand-col-3:       $burn-orange;
+//$brand-col-3--darken: darken($burn-orange, 20%);
+//$brand-col-4:       $dark-red;
+//$brand-col-5:       $pale-yellow;
+
+$success-col:       #fff;
+$warn-col:          #000;
+$fail-col:          #fff;
+$success-bg-col:    #00ce00;
+$warn-bg-col:       #FCFB57;
+$fail-bg-col:       #ce0000;
+
+$brand-col-1 : $slate-grey;
 $brand-col-2 : $act-grey-light;
 $brand-col-3 : $act-grey-dark;
 $brand-col-4 : $act-grey;
