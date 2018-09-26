@@ -7,7 +7,7 @@ class Ac_Custom_Loop extends WP_Widget
     {
 
         parent::__construct('ac_custom_loop', // Base ID
-            'Custom Loop', // Name
+            'Custom Loop 2018', // Name
             array('description' => __('Custom loops', 'ambercouch'),) // Args
         );
     }
