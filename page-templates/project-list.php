@@ -21,7 +21,7 @@ get_header(); ?>
 			<div id="content" class="site-content" role="main">
 				<h2 class="header__title--projects"><?php the_title(); ?></h2>
                         <ul id="ambercouch_projects" class="<?php echo $postType; ?>-list ">
-			<?php ac_custom_loop($postType,$showPostss ) ?>
+			<?php ac_custom_loop($postType,$showPosts ) ?>
                         </ul><!-- end <?php echo $postType; ?>-list --> 
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
