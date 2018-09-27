@@ -1,0 +1,22 @@
+
+<ul class="c-{{ postType }}-list">
+  {% for post in posts %}
+<li id="service-id" class="c-service-list__item slug-{{ post.slug }}">
+  <div class="c-service-list__content" data-icon="{{ post.get_field('service_icon_image') ? '' : post.get_field('icon') }}">
+    {% if post.get_field('service_icon_image')  %}
+      <div class="c-service-list__icon">
+          <img class="c-service-list__icon-img" src="{{  post.get_field('service_icon_image').url }}" >
+      </div>
+    {% endif %}
+    <h3 class="c-service-list__title">{{ post.title }}</h3>
+    {%   if  post.get_field('sub_title') %}
+    <h4 class="c-service-list__sub-title">{{ post.get_field('sub_title') }}</h4>
+    {% endif %}
+   {% if post.get_field('more_info') %}
+    <small class="c-service-list__more"><a  class="c-service-list__more-link" href="{{ post.link }}"><span class="c-service-list__more-link-label">Find out more &raquo;</span></a></small>
+   {% endif %}
+  </div><!-- .content -->
+</li>
+  {% endfor %}
+</ul>
+

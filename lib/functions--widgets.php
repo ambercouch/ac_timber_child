@@ -70,7 +70,7 @@ class Ac_Custom_Loop extends WP_Widget
         $wp_query = null;
         $wp_query = new WP_Query();
         $wp_query->query(array(
-                $tax => $cat,
+//                $tax => $cat,
                 'post_type' => $instance['post_type'],
                 'showposts' => $instance['show'],
                 'orderby' => 'menu_order',
@@ -80,17 +80,17 @@ class Ac_Custom_Loop extends WP_Widget
         echo $before_title;
         echo $instance['title'];
         echo $after_title;
-        if (have_posts()) :
+        $context = Timber::get_context();
+        $post = new TimberPostsCollection();
+        $context['post'] = $post;
+        $context['postType'] = $instance['post_type'];
             ?>
-            <ul class="<?php echo $instance['post_type'] ?>-list">
-                <?php while (have_posts()): the_post(); ?>
-
-                    <?php get_template_part('content', $instance['post_type']) ?>
-
-                <?php endwhile; ?>
-            </ul>
+                    <?php
+                    $templates = array( 'content/content-service-thumb.twig' );
+                    Timber::render( $templates, $context );
+                    ?>
             <?php
-        endif;
+
         echo $after_widget;
         $wp_query = $temp_q;
     }
